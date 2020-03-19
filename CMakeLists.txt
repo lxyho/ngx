@@ -4,4 +4,4 @@ project(NGX)
 
 aux_source_directory(. DIR_SRCS)
 
-add_executable(${project_name} ${DIR_SRCS})
+add_executable(${PROJECT_NAME} ${DIR_SRCS})

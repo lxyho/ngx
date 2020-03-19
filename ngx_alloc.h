@@ -9,8 +9,8 @@
 #define _NGX_ALLOC_H_INCLUDED_
 
 
-#include <ngx_config.h>
-#include <ngx_core.h>
+#include "ngx_config.h"
+#include "ngx_core.h"
 
 
 void *ngx_alloc(size_t size, ngx_log_t *log);
