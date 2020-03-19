@@ -60,20 +60,17 @@ void ngx_destroy_pool(ngx_pool_t *pool)
 #endif
 
 	/* 清理pool->large 链表（pool->large为单独的大数据内存块）*/
-	for (l = pool->large; l; l = l->next) 
-	{
-		if (l->alloc) 
-		{
+	for (l = pool->large; l; l = l->next) {
+		if (l->alloc) {
 			ngx_free(l->alloc);
 		}
 	}
 
 	/* 对内存池的data数据区域进行释放 */
-	for (p = pool, n = pool->d.next; /* void */; p = n, n = n->d.next) 
-	{
+	for (p = pool, n = pool->d.next; /* void */; p = n, n = n->d.next) {
 		ngx_free(p);
-		if (n == NULL) 
-		{
+
+		if (n == NULL) {
 			break;
 		}
 	}
